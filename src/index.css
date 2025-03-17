@@ -1,6 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
+  font-family: Georgia, serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1A1A1D;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }1
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@layer base {
+  li{
+    @apply p-4
+  }
+  button{
+    @apply text-white border bg-[#39804a] border-none hover:bg-transparent rounded-xl
+  }
+  ul{
+    padding: 0;
+    list-style-type: none;
+  }
+  .font-qwitcher {
+    font-family: 'Qwitcher Grypen', cursive;
+    font-weight: 700;
+  }
+}
+
+
+
+/*:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -27,7 +79,6 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -44,7 +95,6 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -55,6 +105,7 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+  
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -68,3 +119,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+*/
