@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     
-    <div className='w-full h-[80px] z-10 bg-[#2f4f4f] fixed drop-shadow-lg relative'>
+    <div className='w-full h-[80px] z-10 bg-[#394931] fixed drop-shadow-lg relative'>
       <div className='flex justify-between items-center w-full h-full md:max-w-[1240px] m-auto'>
         <div className='flex items-center'>
           <img src={dahlia_new} alt="dahlia" className='sm:ml-2 ss:ml-2  w-[70px] h-[70px]' />
