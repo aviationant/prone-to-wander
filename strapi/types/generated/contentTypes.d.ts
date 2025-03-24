@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
+    description: '';
     displayName: 'Blogs';
     pluralName: 'blogs';
     singularName: 'blog';
@@ -380,8 +381,9 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    blogContent: Schema.Attribute.Blocks;
-    blogDesc: Schema.Attribute.String;
+    authorName: Schema.Attribute.String;
+    blogContent: Schema.Attribute.RichText;
+    blogDesc: Schema.Attribute.Text;
     blogTitle: Schema.Attribute.String;
     coverImg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;

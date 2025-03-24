@@ -1,12 +1,13 @@
 import React from 'react';
 import { Navbar, Blogs, Footer, BlogContent } from "../components";
 
-const BlogContentPage = () => {
+
+const BlogContentPage = ({blogs}) => {
     return (
         <div>
             <Navbar />
             <div className='flex-grow'>
-                <BlogContent />
+                <BlogContent blogs={blogs?blogs:""} />
             </div>
             <Footer />
         </div>
