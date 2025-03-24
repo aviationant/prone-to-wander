@@ -28,18 +28,20 @@ const Blogs = () => {
         <div className='w-full py-[30px] md:py-[50px]'>
             <div className='max-w-[1240px] mx-auto'>
                 <div className='grid lg:grid-cols-3 gap-8 px-4 lg:px-0 text-black'>
+
                     {blogs.map((blog) =>
+
                         <Link to={`/blog/${blog.id}`}>
-                            <div className='bg-[#90997f] rounded-xl overflow-hidden drop-shadow-md'> 
+                            <div className='bg-[#90997f] rounded-xl overflow-hidden drop-shadow-md'>
                                 <img className='h-56 w-full object-cover' src={blog.coverImg} />
                                 <div className='p-3 md:p-5'>
-                                    <h3 className='font-bold text-2xl md:my-1 text-white'>{blog.title}</h3>
-                                    <p className='text-gray-100 text=xl'>{blog.description}</p>
+                                    <h3 className='font-bold text-3xl md:my-1 text-white'>{blog.title}</h3>
+                                    <p className='text-gray-100 text-xl'>{blog.description}</p>
                                 </div>
                             </div>
                         </Link>
-                    )}
 
+                    )}
 
                 </div>
             </div>

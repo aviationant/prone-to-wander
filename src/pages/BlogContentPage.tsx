@@ -5,7 +5,9 @@ const BlogContentPage = () => {
     return (
         <div>
             <Navbar />
-            <BlogContent />
+            <div className='flex-grow'>
+                <BlogContent />
+            </div>
             <Footer />
         </div>
     )

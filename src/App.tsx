@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Homepage, BlogContentPage } from "./pages";
+import { Homepage, BlogContentPage, AboutMe } from "./pages";
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -8,7 +8,8 @@ function App() {
     <div>
       <Routes>
         <Route path='/' element={<Homepage />}></Route>
-        <Route path='/blog' element={<BlogContentPage />}></Route>
+        <Route path='/blog/:id' element={<BlogContentPage />}></Route>
+        <Route path='/about' element={<AboutMe />}></Route>
       </Routes>
     </div>
 

@@ -8,7 +8,6 @@ const Homepage = () => {
             <Navbar />
             <div className='flex-grow'>
                 <Blogs />
-
             </div>
             <Footer />
         </div>
