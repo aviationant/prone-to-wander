@@ -1,5 +1,4 @@
-import React from 'react';
-import { Navbar, Footer, BlogContent } from "../components";
+import { Navbar, Footer } from "../components";
 
 const AboutMe = () => {
     return (

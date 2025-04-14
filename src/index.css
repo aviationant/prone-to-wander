@@ -25,25 +25,95 @@
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
 }
 
+@layer utilities {
+  @keyframes typing {
+    0% {
+      width: 0%;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink {
+
+    0%,
+    100% {
+      border-color: transparent;
+    }
+
+    50% {
+      border-color: black;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .animate-typing {
+    animation: typing 1s steps(10) forwards;
+    /* 10 steps for "Loading..." */
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    /* Ensures width animates correctly */
+    width: 0;
+  }
+
+  .animate-fadeOut-long {
+    animation: fadeOut 3s ease-in forwards;
+  }  
+
+  .animate-fadeOut-med {
+    animation: fadeOut 1s ease-in forwards;
+  }
+
+  .animate-fadeOut-short {
+    animation: fadeOut 0.5s ease-in forwards;
+  }
+
+  .animate-blink {
+    animation: blink 0.75s infinite;
+  }
+
+  .typing-container {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
 @layer base {
-  li{
+  li {
     @apply p-4
   }
-  button{
+
+  button {
     @apply text-white border bg-[#39804a] border-none hover:bg-transparent rounded-xl
   }
-  ul{
+
+  ul {
     padding: 0;
     list-style-type: none;
   }
+
   .font-qwitcher {
     font-family: 'Qwitcher Grypen', cursive;
     font-weight: 700;

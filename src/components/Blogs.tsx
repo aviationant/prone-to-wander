@@ -1,39 +1,39 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
+export interface Blog {
+    id: number;
+    blogTitle: string;
+    blogDesc: string;
+    blogContent: string;
+    publishedAt: Date;
+    authorName: string;
+    coverImg: {
+        url: string;
+    }
+}
 
-const blogs1 = [
-    {
-        'id': '1',
-        'title': 'Blog 1',
-        'description': 'Lorem',
-        'coverImg': 'https://images.photowall.com/products/42556/summer-landscape-with-river.jpg'
-    },
-    {
-        'id': '2',
-        'title': 'Blog 2',
-        'description': 'Lorem',
-        'coverImg': 'https://www.adorama.com/alc/wp-content/uploads/2018/11/landscape-photography-tips-yosemite-valley-feature.jpg'
-    },
-    {
-        'id': '3',
-        'title': 'Blog 3',
-        'description': 'Lorem',
-        'coverImg': 'https://media.greatbigphotographyworld.com/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg'
-    },
-]
+export interface StrapiResponse {
+    data: Blog[];
+    meta: {
+        [key: string]: any;
+    }
+}
 
-const ENDPOINT = "http://100.108.159.83:1337";
+export interface BlogsProp {
+    blogs: StrapiResponse | null;
+}
 
-const Blogs = ({blogs}) => {
+const Blogs = ({blogs}: BlogsProp) => {
 
-    console.log(blogs.data[0].coverImg.url)
+
+    const ENDPOINT = "http://100.108.159.83:1337";
+
     return (
         <div className='w-full py-[30px] md:py-[50px]'>
             <div className='max-w-[1240px] mx-auto'>
                 <div className='grid lg:grid-cols-3 gap-8 px-4 lg:px-0 text-black'>
 
-                    {blogs.data.map((blog) =>
+                    {blogs?blogs.data.map((blog: Blog) =>
 
                         <Link to={`/blog/${blog.id}`}>
                             <div className='bg-[#90997f] rounded-xl overflow-hidden drop-shadow-md'>
@@ -45,7 +45,8 @@ const Blogs = ({blogs}) => {
                             </div>
                         </Link>
 
-                    )}
+                    ):null}
+                
 
                 </div>
             </div>

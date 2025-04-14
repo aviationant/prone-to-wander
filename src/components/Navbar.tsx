@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { dahlia_new, menu, closeMenu } from '../assets';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
 
-    <div className='w-full h-[80px] z-10 bg-[#394931] fixed drop-shadow-lg relative'>
+    <div className='w-full h-[80px] z-10 bg-[#394931] fixed drop-shadow-lg relative rounded-b-2xl'>
       <div className='flex justify-between items-center w-full h-full md:max-w-[1240px] m-auto'>
         <Link to={'/'}>
           <div className='flex items-center'>
@@ -22,14 +22,6 @@ const Navbar = () => {
             <Link to={'/about'}><li>About</li></Link>
             <li>Gallery</li>
           </ul>
-        </div>
-        <div className='hidden lg:flex sm:mr-10 lg:mr-0'>
-          <button className='border-white bg-transparent px-6 py-2 mr-4 hover:bg-white hover:text-black'>
-            Login
-          </button>
-          <button className='border-none px-6 py-2 mr-4 lg:mr-0 hover:bg-white hover:text-black'>
-            Sign Up
-          </button>
         </div>
 
         <div className="lg:hidden" onClick={handleClick}>

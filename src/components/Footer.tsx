@@ -1,10 +1,8 @@
-import React from 'react';
-import { BlogContentPage } from '../pages';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className=' w-full bg-[#394931] text-gray-200'>
+        <div className=' w-full bg-[#394931] text-gray-200 rounded-t-2xl'>
             <div className='flex pt-4 w-full md:max-w-[1240px] m-auto justify-between'>
                 <div className='ml-4 md:ml-0 mr-4 md:mr-0 pb-8 md:pt-2'>
                     <p className='font-bold uppercase'>Subscribe to our newsletter.</p>

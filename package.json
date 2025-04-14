@@ -16,8 +16,10 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet-async": "^2.0.5",
-    "react-router-dom": "^7.1.5",
-    "strapi": "^3.6.11"
+    "react-router-dom": "^5.2.0",
+    "@strapi/design-system": "*",
+    "strapi": "^3.6.11",
+    "three-dots": "^0.3.2"
   },
   "devDependencies": {
     "@aws-amplify/backend": "^1.14.0",
