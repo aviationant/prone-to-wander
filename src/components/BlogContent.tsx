@@ -5,8 +5,6 @@ const BlogContent = ({blogs}: BlogsProp) => {
   
   let { id } = useParams();
 
-  const ENDPOINT = "http://100.108.159.83:1337";
-
   let blog: Blog | undefined;
 
   if (!blogs) return <div>Blogs not found.</div>;
@@ -33,7 +31,7 @@ const BlogContent = ({blogs}: BlogsProp) => {
     <div className='w-full py-[30px] md:py-[50px]'>
       <div className='max-w-[1240px] mx-auto'>
         <div className='grid lg:grid-cols-1 px-4 lg:px-0 text-black'>
-          <img className='h-56 w-full object-cover rounded-t-xl' src={`${ENDPOINT}${blog.coverImg.url}`} />
+          <img className='h-56 w-full object-cover rounded-t-xl' src={blog.coverImg[0].url} />
           <div className='rounded-b-xl bg-[#e8e0c9]'>
             <div className='p-3 md:p-5'>
               <h3 className='font-bold text-4xl md:my-1 text-black'>{blog.blogTitle}</h3>

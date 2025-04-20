@@ -7,9 +7,7 @@ export interface Blog {
     blogContent: string;
     publishedAt: Date;
     authorName: string;
-    coverImg: {
-        url: string;
-    }
+    coverImg: { url: string }[];
 }
 
 export interface StrapiResponse {
@@ -25,22 +23,19 @@ export interface BlogsProp {
 
 const Blogs = ({blogs}: BlogsProp) => {
 
-
-    const ENDPOINT = "http://100.108.159.83:1337";
-
     return (
-        <div className='w-full py-[30px] md:py-[50px]'>
-            <div className='max-w-[1240px] mx-auto'>
-                <div className='grid lg:grid-cols-3 gap-8 px-4 lg:px-0 text-black'>
+        <div id='wrapper' className='w-full py-[30px] md:py-[50px]'>
+            <div id='wrapper-child' className='max-w-[1240px] mx-auto'>
+                <div id='wrapper-grid' className='grid lg:grid-cols-3 gap-8 px-4 lg:px-0 text-black'>
 
                     {blogs?blogs.data.map((blog: Blog) =>
 
-                        <Link to={`/blog/${blog.id}`}>
-                            <div className='bg-[#90997f] rounded-xl overflow-hidden drop-shadow-md'>
-                                <img className='h-56 w-full object-cover' src={`${ENDPOINT}${blog.coverImg.url}`} />
-                                <div className='p-3 md:p-5'>
-                                    <h3 className='font-bold text-3xl md:my-1 text-white'>{blog.blogTitle}</h3>
-                                    <p className='text-gray-100 text-xl'>{blog.blogDesc}</p>
+                        <Link key={blog.id} to={`/blog/${blog.id}`}>
+                            <div id='blog-tile-bg' className='bg-[#90997f] rounded-xl overflow-hidden drop-shadow-md'>
+                                <img id='blog-img' className='h-56 w-full object-cover' src={blog.coverImg[0].url} />
+                                <div id='text-box' className='p-3 md:p-5'>
+                                    <h3 id='blog-title' className='font-bold text-3xl md:my-1 text-white'>{blog.blogTitle}</h3>
+                                    <p id='blog-desc' className='text-gray-100 text-xl'>{blog.blogDesc}</p>
                                 </div>
                             </div>
                         </Link>
