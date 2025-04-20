@@ -1,5 +1,5 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 const BlogContent = ({ blogs }) => {
     let { id } = useParams();
     const ENDPOINT = "http://100.108.159.83:1337";

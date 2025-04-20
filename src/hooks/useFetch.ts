@@ -20,6 +20,7 @@ const useFetch = (url: string): [boolean, string | null, StrapiResponse | null] 
                 setError(error instanceof Error ? error.message : "Unknown error");
             }
         }
+        console.log("HERE");
         fetchData();
     }, [])
 

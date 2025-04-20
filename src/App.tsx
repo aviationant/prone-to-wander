@@ -1,12 +1,12 @@
 import { Homepage, BlogContentPage, AboutMe } from "./pages";
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router';
 import useFetch from './hooks/useFetch';
 import { StrapiResponse } from "./components/Blogs";
 
 function App() {
 
   let [loading, error, data]: [boolean, string | null, StrapiResponse | null] = useFetch(
-    'http://100.108.159.83:1337/api/blogs?populate=*'
+    'https://api.pronetowander.me/api/blogs?populate=*'
   );
 
   if (loading) {

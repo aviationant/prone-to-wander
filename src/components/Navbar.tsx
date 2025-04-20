@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { dahlia_new, menu, closeMenu } from '../assets';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(true);

@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router'
 import { Blog, BlogsProp } from "../components/Blogs"
 
 const BlogContent = ({blogs}: BlogsProp) => {
