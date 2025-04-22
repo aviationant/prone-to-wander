@@ -18,6 +18,7 @@ const AboutMe = () => {
                 </div>
             </div>
             <Footer />
+            <div className='fixed inset-0 bg-[#afb590] flex items-center justify-center z-50 animate-fadeOut-short pointer-events-none' />
         </div>
     )
 }
