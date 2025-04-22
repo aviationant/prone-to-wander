@@ -20,7 +20,6 @@ const Navbar = () => {
           <ul className='hidden md:flex text-white'>
             <Link to={'/'}><li>Home</li></Link>
             <Link to={'/about'}><li>About</li></Link>
-            <li>Gallery</li>
           </ul>
         </div>
 
