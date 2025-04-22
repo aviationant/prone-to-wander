@@ -2,7 +2,7 @@ import { Navbar, Footer } from "../components";
 
 const AboutMe = () => {
     return (
-        <div>
+        <div className='flex flex-col min-h-screen'>
             <Navbar />
             <div className='w-full py-[30px] md:py-[50px]'>
                 <div className='max-w-[1240px] mx-auto'>
