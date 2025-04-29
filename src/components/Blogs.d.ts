@@ -7,7 +7,7 @@ export interface Blog {
     authorName: string;
     coverImg: {
         url: string;
-    };
+    }[];
 }
 export interface StrapiResponse {
     data: Blog[];

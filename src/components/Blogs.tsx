@@ -32,7 +32,7 @@ const Blogs = ({blogs}: BlogsProp) => {
 
                         <Link key={blog.id} to={`/blog/${blog.id}`}>
                             <div id='blog-tile-bg' className='bg-[#90997f] rounded-xl overflow-hidden drop-shadow-md'>
-                                <img id='blog-img' className='h-56 w-full object-cover' src={blog.coverImg[0].url} />
+                                {/* <img id='blog-img' className='h-56 w-full object-cover' src={blog.coverImg[0].url} /> */}
                                 <div id='text-box' className='p-3 md:p-5'>
                                     <h3 id='blog-title' className='font-bold text-3xl md:my-1 text-white'>{blog.blogTitle}</h3>
                                     <p id='blog-desc' className='text-gray-100 text-xl'>{blog.blogDesc}</p>

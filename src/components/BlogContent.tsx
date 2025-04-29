@@ -1,8 +1,10 @@
 import { useParams } from 'react-router'
 import { Blog, BlogsProp } from "../components/Blogs"
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import { RootNode } from './BlocksRenderer/BlocksRenderer';
 
-const BlogContent = ({blogs}: BlogsProp) => {
-  
+const BlogContent = ({ blogs }: BlogsProp) => {
+
   let { id } = useParams();
 
   let blog: Blog | undefined;
@@ -22,11 +24,14 @@ const BlogContent = ({blogs}: BlogsProp) => {
     const dateRegex = /^([a-zA-Z]+,\s[0-9]{1,2}\s[a-zA-Z]+\s[0-9]{4})/
     var date = new Date(dateUTC);
     var dateText = dateRegex.exec(date.toUTCString())
-    return (dateText?dateText[1]:"");
+    return (dateText ? dateText[1] : "");
   }
-  
+
   var date = dateToPST(blog.publishedAt);
+  console.log(blog.blogContent)
   
+  const content = blog.blogContent as unknown as RootNode[];
+
   return (
     <div className='w-full py-[30px] md:py-[50px]'>
       <div className='max-w-[1240px] mx-auto'>
@@ -38,7 +43,7 @@ const BlogContent = ({blogs}: BlogsProp) => {
               <h2 className='text-xl'>Written by {blog.authorName}</h2>
               <p className='text-black text-l italic'>{date}</p>
               <hr className='mt-4 mb-4 mr-[calc(33%)] h-px' />
-              <p>{blog.blogContent}</p>
+              <BlocksRenderer content={content} />
             </div>
           </div>
         </div>
