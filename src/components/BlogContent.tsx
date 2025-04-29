@@ -28,9 +28,10 @@ const BlogContent = ({ blogs }: BlogsProp) => {
   }
 
   var date = dateToPST(blog.publishedAt);
-  console.log(blog.blogContent)
   
   const content = blog.blogContent as unknown as RootNode[];
+
+  if (!blogs) return;
 
   return (
     <div className='w-full py-[30px] md:py-[50px]'>
