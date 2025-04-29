@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { StrapiResponse } from '../components/Blogs';
 
-const useFetch = (url: string): [boolean, string | null, StrapiResponse | null] => {
+const useFetch = <T>(url: string): [boolean, string | null, StrapiResponse<T> | null] => {
 
     const [data, setData] = useState(null);
     const [error, setError] = useState<string | null>(null);

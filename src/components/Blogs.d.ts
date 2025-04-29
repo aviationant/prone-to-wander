@@ -9,14 +9,14 @@ export interface Blog {
         url: string;
     }[];
 }
-export interface StrapiResponse {
-    data: Blog[];
+export interface StrapiResponse<T> {
+    data: T[];
     meta: {
         [key: string]: any;
     };
 }
 export interface BlogsProp {
-    blogs: StrapiResponse | null;
+    blogs: StrapiResponse<Blog> | null;
 }
 declare const Blogs: ({ blogs }: BlogsProp) => import("react/jsx-runtime").JSX.Element;
 export default Blogs;

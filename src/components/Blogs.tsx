@@ -10,15 +10,15 @@ export interface Blog {
     coverImg: { url: string }[];
 }
 
-export interface StrapiResponse {
-    data: Blog[];
+export interface StrapiResponse<T> {
+    data: T[];
     meta: {
         [key: string]: any;
     }
 }
 
 export interface BlogsProp {
-    blogs: StrapiResponse | null;
+    blogs: StrapiResponse<Blog> | null;
 }
 
 const Blogs = ({ blogs }: BlogsProp) => {

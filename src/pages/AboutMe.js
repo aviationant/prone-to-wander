@@ -1,6 +1,18 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { Navbar, Footer } from "../components";
+import useFetch from "../hooks/useFetch";
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 const AboutMe = () => {
-    return (_jsxs("div", { className: 'flex flex-col min-h-screen', children: [_jsx(Navbar, {}), _jsx("div", { className: 'flex-grow', children: _jsx("div", { className: 'w-full py-[30px] md:py-[50px]', children: _jsx("div", { className: 'max-w-[1240px] mx-auto', children: _jsx("div", { className: 'grid lg:grid-cols-1 px-4 lg:px-0 text-black', children: _jsx("div", { className: 'rounded-b-xl bg-[#e8e0c9]', children: _jsxs("div", { className: 'p-3 md:p-5', children: [_jsx("h2", { className: '', children: "About Me" }), _jsx("hr", { className: 'mt-4 mb-4 mr-[calc(33%)] h-px' }), _jsxs("p", { children: ["Welcome to my blog! I'm a ", _jsx("span", { className: "highlight", children: "Christian" }), " and a proud wife to my best friend, living in the charming town of ", _jsx("span", { className: "highlight", children: "Prosser, Washington" }), "."] }), _jsxs("p", { children: ["My heart beats for ", _jsx("span", { className: "highlight", children: "cooking" }), " and ", _jsx("span", { className: "highlight", children: "sourdough baking" }), ", where I find joy in creating delicious meals and sharing them with loved ones. When I'm not in the kitchen, you\u2019ll likely find me ", _jsx("span", { className: "highlight", children: "hiking" }), " or ", _jsx("span", { className: "highlight", children: "camping" }), ", soaking in the beauty of the Pacific Northwest."] }), _jsxs("p", { children: ["By trade I'm and EMT, I\u2019m a ", _jsx("span", { className: "highlight", children: "bartender" }), " at heart, with a knack for making people\u2019s day a little brighter. After years as a dedicated first responder, I\u2019m now navigating a career transition, searching for a new path that fuels my passion for serving others."] }), _jsx("p", { children: "Thank you for stopping by my blog! Here, I share my adventures, recipes, and thoughts on life as I embrace this season of growth and discovery." })] }) }) }) }) }) }), _jsx(Footer, {}), _jsx("div", { className: 'fixed inset-0 bg-[#afb590] flex items-center justify-center z-50 animate-fadeOut-short pointer-events-none' })] }));
+    let [loading, error, aboutData] = useFetch('https://api.pronetowander.me/api/abouts?populate=*');
+    if (loading) {
+        return (_jsx("div", { className: 'flex items-center justify-center h-screen', children: _jsx("div", { children: _jsx("p", { className: 'animate-typing overflow-hidden whitespace-nowrap border-r-4 font-qwitcher text-8xl ', children: "Loading..." }) }) }));
+    }
+    if (error)
+        return _jsxs("p", { children: ["Error: ", error] });
+    if (aboutData) {
+        const content = aboutData.data[0].aboutContent;
+        return (_jsxs("div", { className: 'flex flex-col min-h-screen', children: [_jsx(Navbar, {}), _jsx("div", { className: 'flex-grow', children: _jsx("div", { className: 'w-full py-[30px] md:py-[50px]', children: _jsx("div", { className: 'max-w-[1240px] mx-auto', children: _jsx("div", { className: 'grid lg:grid-cols-1 px-4 lg:px-0 text-black', children: _jsx("div", { className: 'rounded-b-xl bg-[#e8e0c9]', children: _jsxs("div", { className: 'p-3 md:p-5', children: [_jsx("h2", { className: '', children: "About Me" }), _jsx("hr", { className: 'mt-4 mb-4 mr-[calc(33%)] h-px' }), _jsx(BlocksRenderer, { content: content })] }) }) }) }) }) }), _jsx(Footer, {}), _jsx("div", { className: 'fixed inset-0 bg-[#afb590] flex items-center justify-center z-50 animate-fadeOut-short pointer-events-none' })] }));
+    }
+    ;
 };
 export default AboutMe;

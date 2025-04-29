@@ -1,5 +1,5 @@
-import { useParams } from 'react-router'
-import { Blog, BlogsProp } from "../components/Blogs"
+import { useParams } from 'react-router';
+import { Blog, BlogsProp } from "../components/Blogs";
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import { RootNode } from './BlocksRenderer/BlocksRenderer';
 
